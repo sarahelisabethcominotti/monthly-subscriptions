@@ -10,15 +10,16 @@ export const Calendar = () => {
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
   const [recurrency, setRecurrency] = useState("");
+  const apiUrl = "https://monthly-subscriptions.vercel.app" || "http://localhost:3001"
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/getSubscriptions").then((response) => {
+    Axios.get(`${apiUrl}/getSubscriptions`).then((response) => {
       setListOfSubscriptions(response.data);
     });
   }, []);
 
   const createSubscription = () => {
-    Axios.post("http://localhost:3001/createSubscription", {
+    Axios.post(`${apiUrl}/createSubscription`, {
       name,
       price,
       start,
@@ -35,7 +36,7 @@ export const Calendar = () => {
   };
 
   const deleteSubscription = (id) => {
-    Axios.delete(`http://localhost:3001/deleteSubscription/${id}`)
+    Axios.delete(`${apiUrl}/deleteSubscription/${id}`)
       .then((response) => {
         setListOfSubscriptions(
           listOfSubscriptions.filter((subscription) => subscription._id !== id)
