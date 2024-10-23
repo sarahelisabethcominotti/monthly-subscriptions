@@ -9,6 +9,7 @@ require("dotenv").config();
 app.use(express.json());
 app.use(cors());
 mongoose.connect(process.env.DB_URL);
+
 app.get("/getSubscriptions", async (req, res) => {
   try {
     const result = await SubscriptionModel.find({});
