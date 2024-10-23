@@ -16,7 +16,7 @@ export const Calendar = () => {
     Axios.get(`${apiUrl}/getSubscriptions`).then((response) => {
       setListOfSubscriptions(response.data);
     });
-  }, []);
+  }, [apiUrl]);
 
   const createSubscription = () => {
     Axios.post(`${apiUrl}/createSubscription`, {
