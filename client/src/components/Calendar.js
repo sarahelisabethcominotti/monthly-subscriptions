@@ -10,7 +10,7 @@ export const Calendar = () => {
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
   const [recurrency, setRecurrency] = useState("");
-  const apiUrl = "https://monthly-subscriptions.vercel.app/api" || "http://localhost:3001/api"
+  const apiUrl = "http://localhost:3001"
 
   useEffect(() => {
     Axios.get(`${apiUrl}/getSubscriptions`).then((response) => {
