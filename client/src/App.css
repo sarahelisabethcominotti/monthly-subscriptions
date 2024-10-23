@@ -7,6 +7,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -25,6 +27,7 @@ code {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  gap: 50px;
   font-size: calc(10px + 2vmin);
   max-width: 696px;
   .header-icon{
