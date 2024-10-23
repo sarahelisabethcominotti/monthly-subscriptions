@@ -10,7 +10,7 @@ export const Calendar = () => {
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
   const [recurrency, setRecurrency] = useState("");
-  const apiUrl = "http://localhost:3001"
+  const apiUrl = "http://localhost:3001";
 
   useEffect(() => {
     Axios.get(`${apiUrl}/getSubscriptions`).then((response) => {
@@ -191,7 +191,13 @@ export const Calendar = () => {
                       {/* add logo with api */}
                       <p>{sub.name}</p>
                       <p>£{sub.price}</p>
-                      <button onClick={() => deleteSubscription(sub._id)}>delete</button>
+                      <button className="delete-button" onClick={() => deleteSubscription(sub._id)}>
+                        <span
+                          className="material-symbols-rounded"
+                        >
+                          delete
+                        </span>
+                      </button>
                     </div>
                   ))}
                 {/* making appear a dot when there is a subscription happening on that day */}
