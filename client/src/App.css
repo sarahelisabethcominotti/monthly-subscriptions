@@ -63,29 +63,33 @@ body {
   justify-content: center;
 }
 
-.popup {
+.add-subscription-form {
   display: none;
   position: absolute;
-  top: 60px;
-  width: 450px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  z-index:1;
- 
-  .example-row {
-      transform: scale(0.7);
-      text-align: center;
-      p {
-          text-align:left;
-          font-size: 20px
-      }
+  z-index: 2;
+  background-color: #434a57;
+  max-width: 215px;
+  padding: 40px;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.5);
+    input, button {
+    max-width: 80%;
   }
+ 
 }
 
 .calendar-container {
   background: #434a57;
   width: 90%;
   border-radius: 10px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+
+  /* box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12); */
+  box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.5);
+
 }
 
 .calendar-container header {
