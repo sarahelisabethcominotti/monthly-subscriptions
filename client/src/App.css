@@ -63,6 +63,24 @@ body {
   justify-content: center;
 }
 
+.popup {
+  display: none;
+  position: absolute;
+  top: 60px;
+  width: 450px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index:1;
+ 
+  .example-row {
+      transform: scale(0.7);
+      text-align: center;
+      p {
+          text-align:left;
+          font-size: 20px
+      }
+  }
+}
+
 .calendar-container {
   background: #434a57;
   width: 90%;
@@ -106,6 +124,7 @@ header .calendar-current-date {
   font-weight: 500;
   font-size: 1.45rem;
 }
+
 
 .calendar-body {
   padding: 20px;
