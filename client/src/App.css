@@ -63,22 +63,33 @@ body {
   justify-content: center;
 }
 
-.add-subscription-form {
+#add-subscription-popup {
   display: none;
+  flex-direction: column;
   position: absolute;
   z-index: 2;
   background-color: #434a57;
   max-width: 215px;
   padding: 40px;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
   border: 2px solid #fff;
   border-radius: 10px;
   box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.5);
+  .add-susbcription-form {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
     input, button {
     max-width: 80%;
   }
+  .btn-close {
+      background-color:#434a57;
+      color: white;
+      border: none;
+    top: 20px;
+    right: 20px;
+    position: absolute;
+    }  
  
 }
 

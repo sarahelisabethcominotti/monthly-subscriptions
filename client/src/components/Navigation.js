@@ -13,7 +13,7 @@ function Navigation() {
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
   const [recurrency, setRecurrency] = useState("");
- 
+
   const createSubscription = () => {
     Axios.post(`${apiUrl}/createSubscription`, {
       name,
@@ -32,24 +32,26 @@ function Navigation() {
   };
 
   // open popup
-//   openAddSubscription.addEventListener("click", function (event) {
-//     event.preventDefault();
-//     addSubscriptionForm.style.display = "flex";
-//   });
-const openAddSubscription = () => {
-    document.getElementById("add-subscription-form").style.display = "flex"
+  //   openAddSubscription.addEventListener("click", function (event) {
+  //     event.preventDefault();
+  //     addSubscriptionForm.style.display = "flex";
+  //   });
+  const openAddSubscription = () => {
+    document.getElementById("add-subscription-popup").style.display = "flex";
   };
 
   // close popup
   const closeAddSubscription = () => {
-    document.getElementById("add-subscription-form").style.display = "none"
+    document.getElementById("add-subscription-popup").style.display = "none";
   };
 
   return (
     <>
       <header className="App-header">
         <button className="header-icon" onClick={openAddSubscription}>
-          <span className="material-symbols-rounded" id="add">add</span>
+          <span className="material-symbols-rounded" id="add">
+            add
+          </span>
         </button>
         <Link style={{ textDecoration: "none", color: "white" }} to="/">
           <p>My Monthly Subscriptions</p>
@@ -61,68 +63,85 @@ const openAddSubscription = () => {
         </Link>
       </header>
       <aside>
-        <div className="add-subscription-form" id="add-subscription-form">
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" id="close-popup" onClick={closeAddSubscription}>X</button>
-
-          <div>
-            Subscription
-            <input
-              type="text"
-              placeholder="Subscription name..."
-              onChange={(event) => {
-                setName(event.target.value);
-              }}
-            />
-          </div>
-          <div>
-            Price<br></br>
-            <input
-              type="number"
-              placeholder="Price..."
-              onChange={(event) => {
-                setPrice(event.target.value);
-              }}
-            />
-          </div>
-          <div>
-            {" "}
-            Start date<br></br>
-            <input
-              type="date"
-              placeholder="Start date..."
-              onChange={(event) => {
-                setStart(event.target.value);
-              }}
-            />
-          </div>
-          <div>
-            End date<br></br>
-            <input
-              type="date"
-              placeholder="End date..."
-              onChange={(event) => {
-                setEnd(event.target.value);
-              }}
-            />
-          </div>
-          <div>
-            Recurrence
-            <input
-              type="text"
-              id="myInput"
-              list="suggestions"
-              placeholder="Recurrence..."
-              onChange={(event) => {
-                setRecurrency(event.target.value);
-              }}
-            />
-          </div>
-          <datalist id="suggestions">
-            <option value="weekly">Every week</option>
-            {/* <option value="monthly">Every month</option>
+        <div id="add-subscription-popup">
+          <button
+            type="button"
+            className="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+            id="close-popup"
+            onClick={closeAddSubscription}
+          >
+            X
+          </button>
+          <div className="add-susbcription-form">
+            <div>
+              Subscription
+              <input
+                type="text"
+                placeholder="Subscription name..."
+                onChange={(event) => {
+                  setName(event.target.value);
+                }}
+              />
+            </div>
+            <div>
+              Price<br></br>
+              <input
+                type="number"
+                placeholder="Price..."
+                onChange={(event) => {
+                  setPrice(event.target.value);
+                }}
+              />
+            </div>
+            <div>
+              {" "}
+              Start date<br></br>
+              <input
+                type="date"
+                placeholder="Start date..."
+                onChange={(event) => {
+                  setStart(event.target.value);
+                }}
+              />
+            </div>
+            <div>
+              End date<br></br>
+              <input
+                type="date"
+                placeholder="End date..."
+                onChange={(event) => {
+                  setEnd(event.target.value);
+                }}
+              />
+            </div>
+            <div>
+              Recurrence
+              <input
+                type="text"
+                id="myInput"
+                list="suggestions"
+                placeholder="Recurrence..."
+                onChange={(event) => {
+                  setRecurrency(event.target.value);
+                }}
+              />
+            </div>
+            <datalist id="suggestions">
+              <option value="weekly">Every week</option>
+              {/* <option value="monthly">Every month</option>
           <option value="yearly">Every year</option> */}
-          </datalist>
-          <button onClick={() => {createSubscription(); closeAddSubscription()}}>Add subscription</button>
+            </datalist>
+            <button
+              onClick={() => {
+                createSubscription();
+                closeAddSubscription();
+              }}
+            >
+              Add subscription
+            </button>
+          </div>
         </div>
       </aside>
     </>

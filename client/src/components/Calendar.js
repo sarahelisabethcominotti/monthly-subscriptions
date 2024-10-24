@@ -4,41 +4,10 @@ import { SubscriptionContext } from "../SubscriptionContext";
 
 export const apiUrl = "http://localhost:3001";
 
-
-
 export const Calendar = () => {
   const {listOfSubscriptions, setListOfSubscriptions} = useContext(SubscriptionContext)
   const [date, setDate] = useState(new Date());
   const [days, setDays] = useState([]);
-  // const [listOfSubscriptions, setListOfSubscriptions] = useState([]);
-  // const [name, setName] = useState("");
-  // const [price, setPrice] = useState(0);
-  // const [start, setStart] = useState("");
-  // const [end, setEnd] = useState("");
-  // const [recurrency, setRecurrency] = useState("");
-
-  // useEffect(() => {
-  //   Axios.get(`${apiUrl}/getSubscriptions`).then((response) => {
-  //     setListOfSubscriptions(response.data);
-  //   });
-  // }, [apiUrl]);
-
-  // const createSubscription = () => {
-  //   Axios.post(`${apiUrl}/createSubscription`, {
-  //     name,
-  //     price,
-  //     start,
-  //     end,
-  //     recurrency,
-  //   }).then((response) => {
-  //     // add subscription immediately to calendar once you click sumbit button
-  //     setListOfSubscriptions([
-  //       ...listOfSubscriptions,
-  //       { name, price, start, end, recurrency },
-  //     ]);
-  //     alert("SUBSCRIPTION ADDED SUCCESSFULLY");
-  //   });
-  // };
 
   const deleteSubscription = (id) => {
     Axios.delete(`${apiUrl}/deleteSubscription/${id}`)
@@ -124,12 +93,6 @@ export const Calendar = () => {
     setDate(newDate);
   };
 
-  // console.log(days);
-  // const dateForDay = new Date(listOfSubscriptions[0].start)
-  // const dayDate = dateForDay.getDate()
-  // console.log(dayDate)
-  // console.log(dateForDay)
-
   const dayDates = listOfSubscriptions.map((subscription) => {
     const dateForDay = new Date(subscription.start);
     const dayDate = dateForDay.getDate();
@@ -212,52 +175,6 @@ export const Calendar = () => {
           </ul>
         </div>
       </div>
-      {/* <div>
-        <input
-          type="text"
-          placeholder="Subscription name..."
-          onChange={(event) => {
-            setName(event.target.value);
-          }}
-        />
-        <input
-          type="number"
-          placeholder="Price..."
-          onChange={(event) => {
-            setPrice(event.target.value);
-          }}
-        />
-
-        <input
-          type="date"
-          placeholder="Start date..."
-          onChange={(event) => {
-            setStart(event.target.value);
-          }}
-        />
-        <input
-          type="date"
-          placeholder="End date..."
-          onChange={(event) => {
-            setEnd(event.target.value);
-          }}
-        />
-        <input
-          type="text"
-          id="myInput"
-          list="suggestions"
-          placeholder="Recurrence..."
-          onChange={(event) => {
-            setRecurrency(event.target.value);
-          }}
-        />
-        <datalist id="suggestions">
-          <option value="weekly">Every week</option>
-          <option value="monthly">Every month</option>
-          <option value="yearly">Every year</option>
-        </datalist>
-        <button onClick={createSubscription}>Add subscription</button>
-      </div> */}
     </>
   );
 };
