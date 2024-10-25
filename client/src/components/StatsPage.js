@@ -51,7 +51,8 @@ function StatsPage() {
         <h1>Subscription Statistics</h1>
         <h3>Total of Subscriptions: £{totalPrice}/month</h3>
         {listOfSubscriptions.length > 0 ? (
-          <Doughnut data={chartData} />
+
+          <Doughnut data={chartData}/>
         ) : (
           <p>No subscriptions available, please add a subscription from the top left corner</p>
         )}
