@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Axios from "axios";
 import { SubscriptionContext } from "../SubscriptionContext";
 
-export const apiUrl = "https://monthly-subscriptions.onrender.com";
+export const apiUrl = "https://monthly-subscriptions.onrender.com"; 
 
 export const Calendar = () => {
   const {listOfSubscriptions, setListOfSubscriptions} = useContext(SubscriptionContext)
@@ -99,7 +99,7 @@ export const Calendar = () => {
     return dayDate;
   });
 
-  console.log(dayDates);
+  // console.log(dayDates);
 
   return (
     <>

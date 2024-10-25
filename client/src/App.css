@@ -184,7 +184,7 @@ header .calendar-current-date {
   border: 2px solid #282c34;
   border-radius: 10%;
   position: absolute;
-  transform: translateX(-27%) translateY(-110%); 
+  transform: translateX(-27%) translateY(-100%); 
   z-index: 5;
   background-color: #282c34;
   box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.5);
