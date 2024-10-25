@@ -5,9 +5,11 @@ const SubscriptionModel = require("./models/Subscriptions");
 const cors = require("cors");
 
 require("dotenv").config();
+const PORT = process.env.PORT || 3001; // set up port for Render deply
+
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin: `https://monthly-subscriptions.netlify.app`}));
 mongoose.connect(process.env.DB_URL);
 
 app.get("/getSubscriptions", async (req, res) => {
@@ -45,6 +47,6 @@ app.delete("/deleteSubscription/:id", async (req, res) => {
   }
 });
 
-app.listen(3001, () => {
-  console.log("server runs");
+app.listen(PORT, () => {
+  console.log(`server runs on port ${PORT}`);
 });
