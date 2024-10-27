@@ -18,7 +18,7 @@ export const SubscriptionProvider = ({ children }) => {
       setListOfLogos(response.data);
     });
   }, []);
-
+console.log('test')
   console.log(listOfLogos)
 
   return (

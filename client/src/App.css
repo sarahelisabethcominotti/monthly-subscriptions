@@ -206,6 +206,7 @@ header .calendar-current-date {
 .calendar-dates li {
   position: relative;
   z-index: 1;
+  height: 20px;
 }
 
 .calendar-dates li.inactive {
