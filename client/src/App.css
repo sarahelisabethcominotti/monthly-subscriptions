@@ -138,6 +138,7 @@ header .calendar-current-date {
 
 .calendar-body {
   padding: 20px;
+  width: 300px;
 }
 
 .calendar-body ul {
@@ -236,4 +237,22 @@ header .calendar-current-date {
 
 .calendar-dates li:not(.active):hover::before {
   background: #e4e1e1;
+}
+
+@media screen and (min-width: 425px) {
+  .calendar-container {
+    width: 380px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .calendar-container {
+    width: 550px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .calendar-container {
+    width: 700px;
+  }
 }

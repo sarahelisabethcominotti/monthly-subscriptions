@@ -13,13 +13,13 @@ export const SubscriptionProvider = ({ children }) => {
     });
   }, []);
 
-  useEffect(() => {
-    Axios.get(`https://api.uplead.com/v2/company-name-to-domain?company_name=spotify`).then((response) => {
-      setListOfLogos(response.data);
-    });
-  }, []);
-console.log('test')
-  console.log(listOfLogos)
+//   useEffect(() => {
+//     Axios.get(`https://api.uplead.com/v2/company-name-to-domain?company_name=spotify`).then((response) => {
+//       setListOfLogos(response.data);
+//     });
+//   }, []);
+// console.log('test')
+//   console.log(listOfLogos)
 
   return (
     <SubscriptionContext.Provider value={{ listOfSubscriptions, setListOfSubscriptions, listOfLogos, setListOfLogos }}>
