@@ -4,12 +4,25 @@ const mongoose = require("mongoose");
 const SubscriptionModel = require("./models/Subscriptions");
 const cors = require("cors");
 
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://monthly-subscriptions.netlify.app"
+];
+
 require("dotenv").config();
 const PORT = process.env.PORT || 3001; // set up port for Render deply
 
 
 app.use(express.json());
-app.use(cors({origin: `https://monthly-subscriptions.netlify.app`}));
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin) || netlifyPattern.test(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+}));
 mongoose.connect(process.env.DB_URL);
 
 app.get("/getSubscriptions", async (req, res) => {

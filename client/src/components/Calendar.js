@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Axios from "axios";
 import { SubscriptionContext } from "../SubscriptionContext";
 
-export const apiUrl = "https://monthly-subscriptions.onrender.com"; 
+export const apiUrl = process.env.REACT_APP_API_URL; 
 
 export const Calendar = () => {
   const {listOfSubscriptions, setListOfSubscriptions} = useContext(SubscriptionContext)
